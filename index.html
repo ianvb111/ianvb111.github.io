@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonomatic</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        
+        .logo-link {
+            display: inline-block;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo-link:hover {
+            opacity: 0.8;
+        }
+        
+        .logo {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .subtitle {
+            margin-top: 1.5rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 600px) {
+            .logo {
+                max-width: 300px;
+            }
+            
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://sonomatic.com" target="_blank" class="logo-link">
+            <img src="SONO_INLINE_COL.png" alt="Sonomatic Logo" class="logo">
+        </a>
+        <div class="subtitle">
+            Click the logo to visit Sonomatic.com
+        </div>
+    </div>
+</body>
+</html>
