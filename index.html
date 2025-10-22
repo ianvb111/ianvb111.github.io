@@ -43,6 +43,10 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
+            border: 2px solid #ddd;
+            background: white;
+            padding: 10px;
+            display: block;
         }
         
         .subtitle {
@@ -66,8 +70,9 @@
 <body>
     <div class="container">
         <a href="https://sonomatic.com" target="_blank" class="logo-link">
-            <img src="SONO_INLINE_COL.png" alt="Sonomatic Logo" class="logo" 
-                 onerror="this.style.display='none'; document.getElementById('fallback').style.display='block';">
+            <img src="./SONO_INLINE_COL.png" alt="Sonomatic Logo" class="logo" 
+                 onerror="this.style.display='none'; document.getElementById('fallback').style.display='block';"
+                 onload="console.log('Image loaded successfully');">
         </a>
         <div id="fallback" style="display:none; font-size:3rem; font-weight:bold; color:#666; margin:2rem 0;">
             SONOMATIC
@@ -79,11 +84,14 @@
     <script>
         // Debug image loading
         const img = document.querySelector('.logo');
-        img.onload = function() {
-            console.log('Image loaded successfully');
-        };
         img.onerror = function() {
-            console.log('Image failed to load: SONO_INLINE_COL.png');
+            console.log('PNG failed, trying absolute URL...');
+            this.src = 'https://ianvb111.github.io/SONO_INLINE_COL.png';
+            this.onerror = function() {
+                console.log('Absolute URL also failed, showing fallback');
+                this.style.display='none'; 
+                document.getElementById('fallback').style.display='block';
+            };
         };
     </script>
 </body>
