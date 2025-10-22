@@ -66,11 +66,25 @@
 <body>
     <div class="container">
         <a href="https://sonomatic.com" target="_blank" class="logo-link">
-            <img src="SONO_INLINE_COL.png" alt="Sonomatic Logo" class="logo">
+            <img src="SONO_INLINE_COL.png" alt="Sonomatic Logo" class="logo" 
+                 onerror="this.style.display='none'; document.getElementById('fallback').style.display='block';">
         </a>
+        <div id="fallback" style="display:none; font-size:3rem; font-weight:bold; color:#666; margin:2rem 0;">
+            SONOMATIC
+        </div>
         <div class="subtitle">
-            Click the logo to visit Sonomatic.com
+            Click to visit Sonomatic.com
         </div>
     </div>
+    <script>
+        // Debug image loading
+        const img = document.querySelector('.logo');
+        img.onload = function() {
+            console.log('Image loaded successfully');
+        };
+        img.onerror = function() {
+            console.log('Image failed to load: SONO_INLINE_COL.png');
+        };
+    </script>
 </body>
 </html>
